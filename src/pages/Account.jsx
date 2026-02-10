@@ -32,25 +32,6 @@ export default function Account() {
     setIsSignedIn(false);
   };
 
-  const stats = [
-    {
-      label: "Books Saved",
-      value: favorites.length,
-    },
-    {
-      label: "Reading Streak",
-      value: "7 days",
-    },
-    {
-      label: "Achievement Points",
-      value: favorites.length * 10,
-    },
-    {
-      label: "Member Level",
-      value: favorites.length >= 20 ? "Gold" : favorites.length >= 10 ? "Silver" : "Bronze",
-    }
-  ];
-
   if (!isSignedIn) {
     return (
       <div className="max-w-md mx-auto px-6 py-12">
@@ -167,26 +148,6 @@ export default function Account() {
           </div>
         </div>
       </div>
-
-      {/* Stats Grid */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-        {stats.map((stat, index) => (
-          <div 
-            key={index} 
-            className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border"
-            style={{ borderColor: '#eff6ff' }}
-          >
-            <div className="text-sm text-gray-600 dark:text-gray-400 mb-2">{stat.label}</div>
-            <div 
-              className="text-3xl font-bold"
-              style={{ color: '#2563eb' }}
-            >
-              {stat.value}
-            </div>
-          </div>
-        ))}
-      </div>
-
       {/* Reading Progress */}
       <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-md mb-8">
         <div className="flex items-center justify-between mb-6">
